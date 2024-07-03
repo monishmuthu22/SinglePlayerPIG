@@ -1,0 +1,32 @@
+# Pig Game
+import random
+
+
+class Player:
+    name = input("Enter Your Name: ")
+
+
+player1 = Player()
+player2 = Player()
+score = 0
+print("Welcome to PIG")
+print("Objective: Roll a Dice X # of times to get a total score.")
+print("Rules: Roll any # on dice to get a total score boost except one")
+while True:
+    play = input("Do You Wish To Roll? (Y) for YES or (N) for NO: ").upper()
+    if play == "Y":
+        roll = random.randint(1, 6)
+        if roll > 1:
+            score += roll
+            print(score)
+            continue
+        else:
+            print(f"Sorry {player1} You Rolled A {roll} You Lose!")
+            break
+    elif play == "N":
+        print(score)
+        print(f"Thank You For Playing {player1}")
+        break
+    else:
+        print("I Do Not Understand")
+        continue
